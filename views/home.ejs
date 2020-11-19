@@ -1,0 +1,25 @@
+<%- include partials/header.ejs %>
+
+<h1>Home</h1>
+<%= homeStartingContent %>
+
+<hr>
+
+<% homePosts.forEach(function(post){ %>
+<a class="btn" href="/posts/<%= post.title %>.<%= homePosts.indexOf(post) %> ">
+  <h1> <%= post.title %> </h1>
+</a>
+<br>
+<div class="post">
+  <%= post.content %>
+</div>
+<a href="/posts/<%= post.title %>.<%= homePosts.indexOf(post) %> ">Read More</a>
+<br>
+
+
+<hr>
+<% }); %>
+
+
+
+<%- include partials/footer.ejs %>
